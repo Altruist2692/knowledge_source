@@ -1,0 +1,19 @@
+1. UI change: Side bar nav the dark blue boxes should only show dropshadow on rollover. White "currently selected" tab should keep dropshadow all the time. You should also be able to hover anywhere over the button to trigger the underlined text and click link - right now if you click next to the text in the dark blue area, the button doesn't work.
+
+2. FUTURE CHANGE: Launch Profile Wizard should read "Show Profile Completion Details". See the last posted PNG in this thread for what it should look like when that is selected.
+
+3. Backend(Fixed): I'm getting a "gender can't be blank" error, but there is no gender field
+
+Overview does not reflect the PSD file:
+
+4. rollover to edit gray boxes should not include the section header. The should only highlight the line or section of relevant copy being edited
+5. the header of each section on overview should jump to the corresponding sub-set of navigation (ie clicking on Basic Details header should go to basic details section the buttons for each section need space below (too close to header of next section
+    if there is no information, the space should not be shown (moving the buttons up to like the PSD)
+
+
+6.Backend/UI change(Done for 2 modes (contact/yourself))
+Wording for view mode needs to be:
+View your profile as if you were "a Contact", "a LifeLinker Member" and "Yourself (edit mode)" @drowell please confirm
+
+7. Future change
+When you changed to contact view, the bottom of the sidebar will need to reflect the new pages (which haven't been built yet, so this can be addressed later, once you have built the Other Member Profile pages which were approved last night.

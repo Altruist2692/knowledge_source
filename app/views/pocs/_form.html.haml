@@ -1,0 +1,35 @@
+= form_for @poc do |f|
+  / text input
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control', placeholder: "Enter Name..."
+  .form-group
+    .input-group
+      .input-group-addon
+        %i.fa.fa-calendar
+      = f.text_field :start_poc_at, class: 'form-control', data: {"inputmask" => "'alias': 'mm/dd/yyyy'", "mask" => ""}
+  .form-group
+    .input-group
+      .input-group-addon
+        %i.fa.fa-calendar
+      = f.text_field :end_poc_at, class: 'form-control' , data: { "inputmask" => "'alias': 'mm/dd/yyyy'", "mask" => ""}
+  / textarea
+  .form-group
+    = f.label :description
+    = f.text_area :description, class: 'form-control', placeholder: "Enter ..."
+  .form-group
+    = f.label :revision_note
+    = f.text_area :revision_note, class: 'form-control', placeholder: "Enter ..."
+  .form-group
+    = f.label :key_features
+    %div#TextBoxDiv1
+    = f.text_field :key_features, class: 'form-control', placeholder: "Enter ...", id: 'textbox1'
+  .form-group
+    = f.label :tag_list
+    = f.text_field :tag_list, class: 'form-control', placeholder: "Enter ...", id: 'textbox1'
+  .form-group
+    = f.label :tag_list
+    = f.file_field :source_code, multiple: true
+  .form-group
+    .box-footer
+      = f.submit "Submit", class: 'btn btn-primary'

@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title AdminLTE 2 | Dashboard
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+%body.skin-blue
+  .wrapper
+    = render "layouts/header"
+    = render "layouts/left_sidebar"
+    = yield
+    = render "layouts/footer"
