@@ -3,6 +3,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require turbolinks
 //= require app
+//= require bootstrap-datepicker
+//= require igrowl
 //= require custom

@@ -10,9 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require lte_fonts
  *= require AdminLTE
  *= require skin-purple-light
-
+ *= require bootstrap-datepicker3
+ *= require animate
+ *= require igrowl
  *= require_tree .
  *= require_self
  */

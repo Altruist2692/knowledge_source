@@ -38,6 +38,10 @@ gem 'acts-as-taggable-on', '~> 3.4'
 
 # Add support for file upload
 gem 'carrierwave'
+
+# Add date picker for date select
+gem 'bootstrap-datepicker-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -48,6 +52,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'erb2haml'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+  gem 'pry-byebug'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

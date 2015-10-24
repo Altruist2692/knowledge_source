@@ -1,13 +1,19 @@
 class PocsController < ApplicationController
 
   before_action :assign_poc, only: [:edit, :update, :destroy]
+
   def new
     @poc = Poc.new
   end
 
   def create
-    @poc = Poc.new(poc_params.merge!(revision_number: 1))
+    @poc = Poc.new(poc_params.merge!(revision_number: 1, source_code: params[:poc][:source_code]))
     if @poc.save
+      if params[:poc][:document][:file]
+        params[:poc][:document][:file].each do |file|
+          @poc.documents.create(file: file)
+        end
+      end
       flash[:sccess] = "POC added successfully."
       redirect_to pocs_path
     else
@@ -21,7 +27,6 @@ class PocsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -63,7 +68,10 @@ class PocsController < ApplicationController
                                 :revision_note,
                                 :key_features,
                                 :tag_list,
-                                :source_code
+                                :source_code,
+                                documents: {}
+
+
     )
   end
 

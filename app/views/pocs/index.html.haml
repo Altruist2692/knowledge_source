@@ -4,17 +4,56 @@
   / Content Header (Page header)
   %section.content-header
     %h1
-      Page Header
-      %small Optional description
-    %ol.breadcrumb
-      %li
-        %a{:href => "#"}
-          %i.fa.fa-dashboard
-          Level
-      %li.active Here
-  / Main content
+      POCs
+      %small Overview of POCs
   %section.content
-    / Your Page Content Here
-  / /.content
-/ /.content-wrapper
-
+    .row
+      .col-md-4.col-sm-6.col-xs-12
+        .info-box
+          %span.info-box-icon.bg-aqua
+            %i.fa.fa-spinner.fa-spin
+          .info-box-content
+            %span.info-box-text In Progress
+            %span.info-box-number
+              90
+              %small %
+      .col-md-4.col-sm-6.col-xs-12
+        .info-box
+          %span.info-box-icon.bg-red
+            %i.fa.fa-flag-checkered
+          .info-box-content
+            %span.info-box-text Finished
+            %span.info-box-number 41,410
+      .clearfix.visible-sm-block
+      .col-md-4.col-sm-6.col-xs-12
+        .info-box
+          %span.info-box-icon.bg-green
+            %i.fa.fa-hand-paper-o
+          .info-box-content
+            %span.info-box-text On Hold
+            %span.info-box-number 760
+    .row
+      .col-md-4.col-sm-6.col-xs-12
+        .info-box
+          %span.info-box-icon.bg-aqua
+            %i.ion.ion-ios-gear-outline
+          .info-box-content
+            %span.info-box-text Future Work
+            %span.info-box-number
+              90
+              %small %
+      .col-md-4.col-sm-6.col-xs-12
+        .info-box
+          %span.info-box-icon.bg-red
+            %i.fa.fa-google-plus
+          .info-box-content
+            %span.info-box-text High Priority
+            %span.info-box-number 41,410
+      .clearfix.visible-sm-block
+      .col-md-4.col-sm-6.col-xs-12
+        .info-box
+          %span.info-box-icon.bg-green
+            %i.ion.ion-ios-cart-outline
+          .info-box-content
+            %span.info-box-text Low Priority
+            %span.info-box-number 760
