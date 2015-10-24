@@ -16,6 +16,8 @@
  *= require bootstrap-datepicker3
  *= require animate
  *= require igrowl
+ *= require  default
+ *= require component
  *= require_tree .
  *= require_self
  */

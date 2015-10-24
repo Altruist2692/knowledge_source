@@ -41,7 +41,9 @@ class PocsController < ApplicationController
   end
 
   def show
-
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy

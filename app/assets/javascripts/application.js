@@ -6,4 +6,9 @@
 //= require app
 //= require bootstrap-datepicker
 //= require igrowl
+//= require modernizr.custom
+//= require classie
+//= require cssParser
+//= requrie css-filters-polyfill
 //= require custom
+//= require modalEffects

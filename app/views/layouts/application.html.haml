@@ -1,13 +1,15 @@
 !!!
-%html
+%html.no-js{:lang => "en"}
   %head
-    %title AdminLTE 2 | Dashboard
+    %title Knowledge-Source | Dashboard
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-%body.skin-blue
-  .wrapper
-    = render "layouts/header"
-    = render "layouts/left_sidebar"
-    = yield
-    = render "layouts/footer"
+  %body.skin-blue
+    .wrapper
+      = render "layouts/header"
+      = render "layouts/left_sidebar"
+      = yield
+      = render "layouts/footer"
+      .md-overlay
+%script{:src => "/assets/modalEffects.js"}

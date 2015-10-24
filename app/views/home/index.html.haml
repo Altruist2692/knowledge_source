@@ -1,20 +1,24 @@
-
-/ Content Wrapper. Contains page content
+#modal-1.md-modal.md-effect-1
+  .md-content
+    %h3 Modal Dialog
+    %div
+      %p This is a modal window. You can do the following things with it:
+      %ul
+        %li
+          %strong Read:
+          modal windows will probably tell you something important so don't forget to read what they say.
+        %li
+          %strong Look:
+          a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.
+        %li
+          %strong Close:
+          click on the button below to close the modal.
+      .row
+        %button.md-close Close me!
+        %button.md-close.custom_save_popup_btn Close me!
 .content-wrapper
   / Content Header (Page header)
-  %section.content-header
-    %h1
-      Page Header
-      %small Optional description
-    %ol.breadcrumb
-      %li
-        %a{:href => "#"}
-          %i.fa.fa-dashboard
-          Level
-      %li.active Here
-  / Main content
-  %section.content
-    / Your Page Content Here
-  / /.content
-/ /.content-wrapper
+  %section.content-header.clearfix
+    .column
+      %button.md-trigger{"data-modal" => "modal-1"} Fade in & Scale
 
