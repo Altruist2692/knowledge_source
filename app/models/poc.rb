@@ -8,6 +8,11 @@ class Poc < ActiveRecord::Base
   # POC has many documents
   has_many :documents, dependent: :destroy
 
+  # POC can be build using many languages and framework so here relationship between poc and language
+  # is many to many
+  has_many :pocs_language
+  has_many :languages,  through: :pocs_language
+
   # Unable nested attributes for documents through POC
   accepts_nested_attributes_for :documents, allow_destroy: true
 end

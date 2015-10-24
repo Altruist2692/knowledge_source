@@ -14,3 +14,14 @@
 #flash_list{
     text-decoration: none!important;
 }
+.list_decoration_none{
+    list-style-type: none !important;
+}
+.custom_div{
+    display: block;
+    width: 24%;
+    height: 200px;
+    border: 1px solid #000000;
+    float: left;
+    margin: 5px;
+}
