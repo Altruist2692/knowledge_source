@@ -44,7 +44,9 @@
 
 :javascript
   $(document).ready(function(){
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({
+      format: "dd-mm-yyyy"
+    });
   });
 
   $("#add_btn").click(function() {

@@ -1,2 +1,2 @@
-$("#modal-1").html('#{j render("pocs/poc_details")}');
+$("#modal-1").html('#{j render(partial: "pocs/poc_details", locals: {poc: @poc} )}');
 $("#modal-1").addClass("md-show")

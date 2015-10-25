@@ -1,3 +1,8 @@
+#
+# This is the main model of the application. Poc means Proof of concept.  This model stores all data
+# related to user's demo project having many documents and project source code as well.
+#
+
 class Poc < ActiveRecord::Base
 
   # This line will add tagging feature in this model

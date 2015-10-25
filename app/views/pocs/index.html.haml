@@ -63,174 +63,22 @@
         %h3.timeline-header
           Available Projects
         .timeline-body
-          %div.custom_div#poc_div_1
-            %h3.custom_margin
-              First Demo
-              %small In Progress
-            %span.custom_margin.info-box-text Technologies Used
-            %p.tags.custom_margin
-              %a
-                Ruby
-              %a
-                Rai
-              %a
-                Post
-              %a
-                AWS
-            %span.custom_margin.info-box-text Tags
-            %p.tags.custom_margin
-              %a#label_tags
-                Chatapp
-              %a#label_tags
-                Chatroom
-              %a#label_tags
-                API
-              %a#label_tags
-                AdminUI
-          %div.custom_div
-            %h3.custom_margin
-              First Demo
-              %small In Progress
-            %span.custom_margin.info-box-text Technologies Used
-            %p.tags.custom_margin
-              %a
-                Ruby
-              %a
-                Rai
-              %a
-                Post
-              %a
-                AWS
-            %span.custom_margin.info-box-text Tags
-            %p.tags.custom_margin
-              %a#label_tags
-                Chatapp
-              %a#label_tags
-                Chatroom
-              %a#label_tags
-                API
-              %a#label_tags
-                AdminUI
-          %div.custom_div
-            %h3.custom_margin
-              First Demo
-              %small In Progress
-            %span.custom_margin.info-box-text Technologies Used
-            %p.tags.custom_margin
-              %a
-                Ruby
-              %a
-                Rai
-              %a
-                Post
-              %a
-                AWS
-            %span.custom_margin.info-box-text Tags
-            %p.tags.custom_margin
-              %a#label_tags
-                Chatapp
-              %a#label_tags
-                Chatroom
-              %a#label_tags
-                API
-              %a#label_tags
-                AdminUI
-          %div.custom_div
-            %h3.custom_margin
-              First Demo
-              %small In Progress
-            %span.custom_margin.info-box-text Technologies Used
-            %p.tags.custom_margin
-              %a
-                Ruby
-              %a
-                Rai
-              %a
-                Post
-              %a
-                AWS
-            %span.custom_margin.info-box-text Tags
-            %p.tags.custom_margin
-              %a#label_tags
-                Chatapp
-              %a#label_tags
-                Chatroom
-              %a#label_tags
-                API
-              %a#label_tags
-                AdminUI
-          %div.custom_div
-            %h3.custom_margin
-              First Demo
-              %small In Progress
-            %span.custom_margin.info-box-text Technologies Used
-            %p.tags.custom_margin
-              %a
-                Ruby
-              %a
-                Rai
-              %a
-                Post
-              %a
-                AWS
-            %span.custom_margin.info-box-text Tags
-            %p.tags.custom_margin
-              %a#label_tags
-                Chatapp
-              %a#label_tags
-                Chatroom
-              %a#label_tags
-                API
-              %a#label_tags
-                AdminUI
-          %div.custom_div
-            %h3.custom_margin
-              First Demo
-              %small In Progress
-            %span.custom_margin.info-box-text Technologies Used
-            %p.tags.custom_margin
-              %a
-                Ruby
-              %a
-                Rai
-              %a
-                Post
-              %a
-                AWS
-            %span.custom_margin.info-box-text Tags
-            %p.tags.custom_margin
-              %a#label_tags
-                Chatapp
-              %a#label_tags
-                Chatroom
-              %a#label_tags
-                API
-              %a#label_tags
-                AdminUI
-          %div.custom_div
-            %h3.custom_margin
-              First Demo
-              %small In Progress
-            %span.custom_margin.info-box-text Technologies Used
-            %p.tags.custom_margin
-              %a
-                Ruby
-              %a
-                Rai
-              %a
-                Post
-              %a
-                AWS
-            %span.custom_margin.info-box-text Tags
-            %p.tags.custom_margin
-              %a#label_tags
-                Chatapp
-              %a#label_tags
-                Chatroom
-              %a#label_tags
-                API
-              %a#label_tags
-                AdminUI
+          - @pocs.each do |poc|
+            %div.custom_div{:id => "#poc_div_#{poc.id}"}
+              %h3.custom_margin
+                = link_to poc.name, poc_path(poc), remote: true
+                %small
+                  = poc.status
+              %span.custom_margin.info-box-text Technologies Used
+              %p.tags.custom_margin
+                - poc.languages.each do | language|
+                  %a
+                    = language.name
+              %span.custom_margin.info-box-text Tags
+              %p.tags.custom_margin
+                - poc.tags.each do |tag|
+                  %a#label_tags
+                    = tag.name
   %section.content-header.clearfix
     .column
       = link_to "Call Show", "javascript:;", remote: true, id: "poc_div_2"

@@ -24,7 +24,7 @@ class PocsController < ApplicationController
   end
 
   def index
-    @pocs = Poc.all
+    @pocs = current_user.pocs.includes(:languages, :tags)
   end
 
   def edit
@@ -42,6 +42,7 @@ class PocsController < ApplicationController
   end
 
   def show
+    @poc = Poc.find(params[:id])
     respond_to do |format|
       format.js
     end
