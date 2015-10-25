@@ -14,11 +14,13 @@
       %i.fa.fa-times.fa-pencil
       .tooltip Click Me
     .form
+
       %h2 Login to your account
-      %form
-        %input{:placeholder => "Username", :type => "text"}/
-        %input{:placeholder => "Password", :type => "password"}/
-        %button Login
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        = f.email_field :email, autofocus: true, placeholder: "abc@example.com"
+        = f.password_field :password, autocomplete: "off", placeholder: "********"
+        = f.submit "Login"
+        = render "users/shared/links"
     .form
       %h2 Create an account
       %form

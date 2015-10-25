@@ -1,6 +1,7 @@
 class PocsController < ApplicationController
 
   before_action :assign_poc, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def new
     @poc = Poc.new
@@ -17,7 +18,7 @@ class PocsController < ApplicationController
       flash[:sccess] = "POC added successfully."
       redirect_to pocs_path
     else
-      flash[:danger] = @poc.errors.full_messages
+      flash[:error] = @poc.errors.full_messages
       render :new
     end
   end

@@ -7,6 +7,7 @@
     %h1
       POCs
       %small Overview of POCs
+  = render partial: 'shared/flash'
   %section.content
     .row
       .col-md-4.col-sm-6.col-xs-12
@@ -235,8 +236,6 @@
   %section.content-header.clearfix
     .column
       = link_to "Call Show", "javascript:;", remote: true, id: "poc_div_2"
-      %button.md-trigger{"data-modal" => "modal-1"} Fade in & Scale
-
 
 :javascript
   $('#poc_div_2').click(function(){

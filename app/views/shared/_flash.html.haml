@@ -1,0 +1,7 @@
+- unless flash.empty?
+  .flash_msg.alert_msg
+    - flash_messages_ad_type(flash)
+  :javascript
+    initialize_flash(#{@messages}, "#{@name}")
+
+

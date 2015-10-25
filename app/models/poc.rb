@@ -5,6 +5,10 @@ class Poc < ActiveRecord::Base
 
   mount_uploader :source_code, SourceCodeUploader
 
+  #
+  # Poc Relationships with other Modal
+  #
+
   # POC has many documents
   has_many :documents, dependent: :destroy
 
@@ -15,4 +19,11 @@ class Poc < ActiveRecord::Base
 
   # Unable nested attributes for documents through POC
   accepts_nested_attributes_for :documents, allow_destroy: true
+
+  #
+  # Poc Model Validations
+  #
+
+  validates :name, presence: true
+  validates :source_code, presence: true
 end

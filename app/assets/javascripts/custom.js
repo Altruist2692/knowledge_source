@@ -43,3 +43,16 @@ $(document).ready(function(){
     alert(msg);
     });
 });
+
+function initialize_flash(messages, name){
+    $.each(messages, function(i){
+        $.iGrowl({
+            message: messages[i],
+            type: name,
+            delay: 5000,
+            spacing: 5,
+            animShow: 'fadeInUp',
+            animHide: 'fadeOutDown'
+        })
+    })
+}
