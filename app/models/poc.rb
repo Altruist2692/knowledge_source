@@ -25,6 +25,41 @@ class Poc < ActiveRecord::Base
   # Poc Model Validations
   #
 
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 100}
   validates :source_code, presence: true
+  validates :description, length: { maximum: 500 }
+  validate :end_date_validations
+  validate  :validate_future_end_date
+  validate :validate_start_poc_at
+
+  # Form datepicker returns mm.dd.yyyy so this method will parse and return proper sart_poc_at
+  def start_poc_at=(val)
+    write_attribute(:start_poc_at, Date.strptime(val, "%m/%d/%Y")) if val.present?
+  end
+
+  # Form datepicker returns mm.dd.yyyy so this method will parse and return proper end_poc_at
+  def end_poc_at=(val)
+    write_attribute(:end_poc_at, Date.strptime(val, "%m/%d/%Y")) if val.present?
+  end
+
+  # This is to verify that the start date is present or not if end date  is present
+  def end_date_validations
+    if end_poc_at.present?
+      errors.add :base, "Please start date first!" unless start_poc_at.present?
+    end
+  end
+
+  # End date must be greater than start date.
+  def validate_future_end_date
+    if end_poc_at.present? && start_poc_at.present?
+      errors.add :base, "End date must be greater than start date!" if  start_poc_at > end_poc_at
+    end
+  end
+
+  # This method checks that the start date is present or not if end date is not present
+  def validate_start_poc_at
+    if end_poc_at.present? && start_poc_at.nil?
+      errors.add :base, "Start date must be present if end date is present"
+    end
+  end
 end

@@ -60,6 +60,7 @@ class PocsController < ApplicationController
     flash.clear
     @messages = nil
     @name = nil
+    render nothing: true
   end
   private
 

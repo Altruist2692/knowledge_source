@@ -41,13 +41,13 @@
   .form-group
     .box-footer
       = f.submit "Submit", class: 'btn btn-primary'
+
 :javascript
   $(document).ready(function(){
     $('.datepicker').datepicker();
   });
 
   $("#add_btn").click(function() {
-  alert();
       var template = "<input type='text' name='poc[key_features][INDEX]' value='' id='textbox[INDEX]' placeholder='Enter ...' class='form-control'>",
           index = $('text').length,
           compiled_template;
