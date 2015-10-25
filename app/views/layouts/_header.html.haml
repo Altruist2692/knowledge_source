@@ -16,4 +16,4 @@
         %li
           %a FAQ
         %li
-          %a Logout
+          = link_to "Logout",  destroy_user_session_path, method: :delete

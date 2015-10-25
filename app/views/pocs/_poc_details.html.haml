@@ -1,93 +1,101 @@
-#modal-1.md-modal.md-effect-1
-  .md-content
-    %h3
-      Modal DialogModal
-      %small In progress
-    %div
+.md-content
+  %h3
+    Modal DialogModal
+    %small In progress
+  %div
 
-      %p.tags.custom_margin
-        %span.info-box-text
-          %strong Technologies Used
-        %a
-          Ruby
-        %a
-          Rai
-        %a
-          Post
-        %a
-          AWS
-      %p.tags.custom_margin
-        %span.info-box-text
-          %strong Tags
-        %a#label_tags
-          Chatapp
-        %a#label_tags
-          Chatroom
-        %a#label_tags
-          API
-        %a#label_tags
-          AdminUI
-      %p.languages_brief.custom_margin
-        %span.info-box-text
-          %strong
-            Short Description
-        modal windows will probably tell you something important so don't forget to read what they say.a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.click on the button below to close the modal.
-      .custom_margin
-        %span.info-box-text
-          %strong
-            Source Code
-        %ul
-          %li.source_file_name
-            source_file_name.zip
-          %li.source_link
-            %a{:href => "#"}
-              %img.download-btn{:src => "/assets/download_source.png"}
-              %strong Download
-      %p.custom_margin
-        %span.info-box-text
-          %strong
-            Documents
-        .box
-          .box-body.no-padding
-            %table.table.table-condensed
-              %tbody
-                %tr
-                  %th{:style => "width: 10px"} #
-                  %th Name
-                  %th Size
-                  %th{:style => "width: 40px"}
-                %tr
-                  %td 1.
-                  %td doc_1.doc
-                  %td
-                    20KB
-                  %td
-                    %a{:href => "#"}
-                      %img.download-btn{:src => "/assets/download_source.png"}
-                %tr
-                  %td 2.
-                  %td doc_2.doc
-                  %td
-                    30KB
-                  %td
-                    %a{:href => "#"}
-                      %img.download-btn{:src => "/assets/download_source.png"}
-                %tr
-                  %td 3.
-                  %td doc_3.doc
-                  %td
-                    40KB
-                  %td
-                    %a{:href => "#"}
-                      %img.download-btn{:src => "/assets/download_source.png"}
-                %tr
-                  %td 4.
-                  %td doc_5.doc
-                  %td
-                    60KB
-                  %td
-                    %a{:href => "#"}
-                      %img.download-btn{:src => "/assets/download_source.png"}
-                      %strong Download
-      .row
-        %button.md-close Close me!
+    %p.tags.custom_margin
+      %span.info-box-text
+        %strong Technologies Used
+      %a
+        Ruby
+      %a
+        Rai
+      %a
+        Post
+      %a
+        AWS
+    %p.tags.custom_margin
+      %span.info-box-text
+        %strong Tags
+      %a#label_tags
+        Chatapp
+      %a#label_tags
+        Chatroom
+      %a#label_tags
+        API
+      %a#label_tags
+        AdminUI
+    %p.languages_brief.custom_margin
+      %span.info-box-text
+        %strong
+          Short Description
+      modal windows will probably tell you something important so don't forget to read what they say.a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.click on the button below to close the modal.
+    .custom_margin
+      %span.info-box-text
+        %strong
+          Source Code
+      %ul
+        %li.source_file_name
+          source_file_name.zip
+        %li.source_link
+          %a{:href => "#"}
+            %img.download-btn{:src => "/assets/download_source.png"}
+            %strong Download
+    %p.custom_margin
+      %span.info-box-text
+        %strong
+          Documents
+      .box
+        .box-body.no-padding
+          %table.table.table-condensed
+            %tbody
+              %tr
+                %th{:style => "width: 10px"} #
+                %th Name
+                %th Size
+                %th{:style => "width: 40px"}
+              %tr
+                %td 1.
+                %td doc_1.doc
+                %td
+                  20KB
+                %td
+                  %a{:href => "#"}
+                    %img.download-btn{:src => "/assets/download_source.png"}
+              %tr
+                %td 2.
+                %td doc_2.doc
+                %td
+                  30KB
+                %td
+                  %a{:href => "#"}
+                    %img.download-btn{:src => "/assets/download_source.png"}
+              %tr
+                %td 3.
+                %td doc_3.doc
+                %td
+                  40KB
+                %td
+                  %a{:href => "#"}
+                    %img.download-btn{:src => "/assets/download_source.png"}
+              %tr
+                %td 4.
+                %td doc_5.doc
+                %td
+                  60KB
+                %td
+                  %a{:href => "#"}
+                    %img.download-btn{:src => "/assets/download_source.png"}
+                    %strong Download
+    .row
+      %button.md-close Close me!
+
+:javascript
+  $('.md-close').click(function(){
+    alert()
+    $('#modal-1').removeClass("md-show")
+    $('#modal-1').html("");
+    $('#modal-1').children();
+  })
+

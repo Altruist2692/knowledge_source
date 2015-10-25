@@ -12,6 +12,7 @@ class Poc < ActiveRecord::Base
   # POC has many documents
   has_many :documents, dependent: :destroy
 
+  belongs_to :user
   # POC can be build using many languages and framework so here relationship between poc and language
   # is many to many
   has_many :pocs_language

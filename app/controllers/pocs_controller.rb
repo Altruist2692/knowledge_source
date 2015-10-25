@@ -4,18 +4,18 @@ class PocsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @poc = Poc.new
+    @poc = current_user.pocs.build
   end
 
   def create
-    @poc = Poc.new(poc_params.merge!(revision_number: 1, source_code: params[:poc][:source_code]))
+    @poc = current_user.pocs.new(poc_params.merge!(revision_number: 1, source_code: params[:poc][:source_code]))
     if @poc.save
-      if params[:poc][:document][:file]
+      if params[:poc][:document] && params[:poc][:document][:file]
         params[:poc][:document][:file].each do |file|
           @poc.documents.create(file: file)
         end
       end
-      flash[:sccess] = "POC added successfully."
+      flash[:success] = "POC added successfully."
       redirect_to pocs_path
     else
       flash[:error] = @poc.errors.full_messages
@@ -56,6 +56,11 @@ class PocsController < ApplicationController
     redirect_to pocs_path
   end
 
+  def clear_flash
+    flash.clear
+    @messages = nil
+    @name = nil
+  end
   private
 
   def assign_poc

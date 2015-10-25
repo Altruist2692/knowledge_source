@@ -7,9 +7,14 @@
     = csrf_meta_tags
   %body.skin-blue
     .wrapper
-      = render "layouts/header"
-      = render "layouts/left_sidebar"
+      - if user_signed_in?
+        = render "layouts/header"
+        = render "layouts/left_sidebar"
       = yield
       = render "layouts/footer"
       .md-overlay
 %script{:src => "/assets/modalEffects.js"}
+:javascript
+  if("#{user_signed_in?}" == "false"){
+    $("body.skin-blue").addClass("sidebar-collapse")
+  }

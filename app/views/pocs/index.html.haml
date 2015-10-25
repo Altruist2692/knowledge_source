@@ -1,8 +1,6 @@
-
-/ Content Wrapper. Contains page content
-= render partial: 'pocs/poc_details'
 .content-wrapper
   / Content Header (Page header)
+  #modal-1.md-modal.md-effect-1
   %section.content-header
     %h1
       POCs
@@ -236,7 +234,7 @@
   %section.content-header.clearfix
     .column
       = link_to "Call Show", "javascript:;", remote: true, id: "poc_div_2"
-
+  .md-overlay
 :javascript
   $('#poc_div_2').click(function(){
     $.ajax({

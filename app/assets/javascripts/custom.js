@@ -45,6 +45,9 @@ $(document).ready(function(){
 });
 
 function initialize_flash(messages, name){
+    if(name == "alert"){
+        name = "notice";
+    }
     $.each(messages, function(i){
         $.iGrowl({
             message: messages[i],
@@ -54,5 +57,9 @@ function initialize_flash(messages, name){
             animShow: 'fadeInUp',
             animHide: 'fadeOutDown'
         })
+    })
+    $.ajax({
+        url: "/pocs/clear_flash",
+        method: 'POST'
     })
 }
